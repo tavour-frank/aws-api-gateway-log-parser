@@ -155,7 +155,7 @@ const parseSingleRequest = (config, logEvents) => {
   for (let l of logEvents) {
     for (let exp in parseExps) {
       if (l.message.match(parseExps[exp])) {
-        _captureGroup = l.message.replace(/\s/,'').match(parseExps[exp])[1];
+        _captureGroup = l.message.replace(/\s/g,'').match(parseExps[exp])[1];
 
         switch (exp) {
         case "request_query_string":
